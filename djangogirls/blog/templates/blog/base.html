@@ -1,0 +1,38 @@
+<!-- base.html
+to repeat headers or whatever you want on any webpage  -->
+
+<!DOCTYPE html>
+{% load staticfiles %}
+
+<html>
+  <head>
+      <title>Welcome!</title>
+      <center><h1>Welcome to Diane's Blog</h1></center>
+
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+      <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+
+  </head>
+    <body>
+      <center><p>This website is created with Django
+        <br><a href='https://www.linkedin.com/in/diane-phan/'>Let's stay connected!</a>
+      </center>
+
+        <div class="page-header"><center>
+          <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+          <h1><a href="/">Diane's Django Girls Blog</a></h1>
+        </center></div>
+
+        <div class="content container">
+          <div class="row">
+            <div class="col-md-8">
+              {% block content %}
+              {% endblock %}
+            </div>
+
+        </div>
+      </div>
+    </body>
+</html>
